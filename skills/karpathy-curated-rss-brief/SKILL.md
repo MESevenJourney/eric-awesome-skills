@@ -1,11 +1,9 @@
 ---
 name: karpathy-curated-rss-brief
-version: "1.0.0"
 description: >
   Fetch articles from Karpathy's curated 93 RSS feeds and generate a Chinese tech daily newsletter.
   Triggers: RSS 日报、RSS 简报、karpathy-curated-rss-brief、每日简报、Karpathy RSS、生成日报、今日资讯、rss-brief。
-tags: rss, newsletter, ai, productivity, chinese
-user_invocable: true
+user-invocable: true
 ---
 
 # Karpathy RSS 日报生成工作流
@@ -17,12 +15,14 @@ user_invocable: true
 ```
 <skill_dir>/
 ├── SKILL.md                       ← 本文件
-├── hn-popular-blogs-2025.opml     ← 订阅源（静态内置）
 ├── scripts/
 │   └── fetch_feeds.py             ← RSS 并发抓取脚本
 └── references/
     └── output-template.md         ← 输出格式模板
 ```
+
+> 订阅源 OPML 托管于 GitHub Pages，脚本运行时自动获取：
+> `https://mesevenjourney.github.io/static/hn-popular-blogs-2025.opml`
 
 ---
 

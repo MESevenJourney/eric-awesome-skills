@@ -4,7 +4,7 @@
 # ///
 """Fetch recent articles from Karpathy's curated RSS feeds and output JSON to stdout.
 
-Uses the bundled hn-popular-blogs-2025.opml in the skill directory.
+Fetches hn-popular-blogs-2025.opml from GitHub Pages at runtime.
 """
 
 import argparse
@@ -13,21 +13,23 @@ import json
 import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
-from pathlib import Path
 from time import mktime
 
 import aiohttp
 import feedparser
 
-_OPML = Path(__file__).parent.parent / "hn-popular-blogs-2025.opml"
+_OPML_URL = "https://mesevenjourney.github.io/static/hn-popular-blogs-2025.opml"
 MAX_ARTICLES = 20
 
 
-def parse_opml(path: Path) -> list[dict]:
-    """Parse OPML file and return list of {text, xmlUrl, htmlUrl}."""
-    tree = ET.parse(path)
+async def fetch_opml(session: aiohttp.ClientSession) -> list[dict]:
+    """Fetch OPML from URL and return list of {text, xmlUrl, htmlUrl}."""
+    async with session.get(_OPML_URL, timeout=aiohttp.ClientTimeout(total=30)) as resp:
+        resp.raise_for_status()
+        body = await resp.text()
+    root = ET.fromstring(body)
     feeds = []
-    for outline in tree.iter("outline"):
+    for outline in root.iter("outline"):
         url = outline.get("xmlUrl")
         if url:
             feeds.append({
@@ -89,13 +91,13 @@ async def fetch_feed(session: aiohttp.ClientSession, feed: dict, sem: asyncio.Se
 
 async def main(hours: int) -> None:
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
-    feeds = parse_opml(_OPML)
-    print(f"[INFO] Parsed {len(feeds)} feeds from OPML, fetching articles newer than {cutoff.isoformat()}", file=sys.stderr)
 
     sem = asyncio.Semaphore(20)
     all_articles: list[dict] = []
 
     async with aiohttp.ClientSession(headers={"User-Agent": "karpathy-curated-rss-brief/1.0"}) as session:
+        feeds = await fetch_opml(session)
+        print(f"[INFO] Parsed {len(feeds)} feeds from {_OPML_URL}, fetching articles newer than {cutoff.isoformat()}", file=sys.stderr)
         tasks = [fetch_feed(session, f, sem, cutoff) for f in feeds]
         results = await asyncio.gather(*tasks)
 
@@ -112,9 +114,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fetch recent RSS articles from Karpathy's curated feed list")
     parser.add_argument("--hours", type=int, default=24, help="How many hours back to look (default: 24)")
     args = parser.parse_args()
-
-    if not _OPML.exists():
-        print(f"[ERROR] Bundled OPML not found: {_OPML}", file=sys.stderr)
-        sys.exit(1)
 
     asyncio.run(main(args.hours))
