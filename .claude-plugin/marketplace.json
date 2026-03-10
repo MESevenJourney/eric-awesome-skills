@@ -1,0 +1,28 @@
+{
+  "name": "eric-awesome-skills",
+  "owner": {
+    "name": "mesevenjourney",
+    "email": "mesevenjourney@outlook.com"
+  },
+  "metadata": {
+    "description": "Personal tech toolbox — a curated collection of Claude Code skills for boosting productivity."
+  },
+  "plugins": [
+    {
+      "name": "karpathy-curated-rss-brief",
+      "source": {
+        "source": "github",
+        "repo": "MESevenJourney/eric-awesome-skills",
+        "path": "skills/karpathy-curated-rss-brief"
+      },
+      "version": "1.0.0",
+      "description": "Fetches articles from Karpathy's curated 93 RSS feeds and generates a high-quality Chinese tech daily newsletter.",
+      "author": {
+        "name": "mesevenjourney",
+        "email": "mesevenjourney@outlook.com"
+      },
+      "category": "productivity",
+      "keywords": ["rss", "newsletter", "ai", "productivity", "chinese"]
+    }
+  ]
+}

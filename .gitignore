@@ -1,0 +1,14 @@
+.DS_Store
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# ClawHub local state (current and legacy directory names from the official CLI)
+.clawhub/
+.clawdhub/
+
+# claude local state
+.claude

@@ -1,0 +1,12 @@
+{
+  "name": "karpathy-curated-rss-brief",
+  "version": "1.0.0",
+  "description": "Fetches articles from Karpathy's curated 93 RSS feeds and generates a high-quality Chinese tech daily newsletter.",
+  "author": {
+    "name": "mesevenjourney",
+    "email": "mesevenjourney@outlook.com"
+  },
+  "skills": [
+    "SKILL.md"
+  ]
+}
