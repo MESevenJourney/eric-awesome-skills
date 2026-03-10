@@ -10,10 +10,9 @@
 
 ## 📦 Skills 列表
 
-| Skill | 简介 | 触发词 | 备注 |
-|-------|------|--------|------|
-| [karpathy-curated-rss-brief](skills/karpathy-curated-rss-brief/) | 从 Karpathy 精选的 93 个 RSS 源抓取最近文章，生成高质量中文日报 | `RSS 日报`、`karpathy-curated-rss-brief` | 灵感来源：[Karpathy 的 RSS 列表](https://x.com/karpathy/status/2018043254986703167) 和 [Cory Doctorow 谈 RSS](https://pluralistic.net/2026/03/07/reader-mode/)。Skill 页面：[YouMind](https://youmind.com/~skills/019c4fce-220b-7f35-974b-0cc543b7682d)。[查看完整灵感来源 →](skills/karpathy-curated-rss-brief/README.md#灵感来源) |
-
+| Skill | 简介 | 触发词 | 备注 | Preview |
+|-------|------|--------|------|------| 
+| [karpathy-curated-rss-brief](skills/karpathy-curated-rss-brief/) | 从 Karpathy 精选的 93 个 RSS 源抓取最近文章，生成高质量中文日报 | `RSS 日报`、`karpathy-curated-rss-brief` | 灵感来源：[Karpathy 的 RSS 列表](https://x.com/karpathy/status/2018043254986703167) 和 [Cory Doctorow 谈 RSS](https://pluralistic.net/2026/03/07/reader-mode/)。Skill 页面：[YouMind](https://youmind.com/~skills/019c4fce-220b-7f35-974b-0cc543b7682d)。[查看完整灵感来源 →](skills/karpathy-curated-rss-brief/README.md#灵感来源) | <img src="assets/KarpathyRssBeginning.png" width="480" alt="日报开头"> <img src="assets/KarpathyRssEnding.png" width="480" alt="日报结尾"> |
 ---
 
 ## 🚀 安装

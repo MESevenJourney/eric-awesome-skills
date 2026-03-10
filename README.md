@@ -10,9 +10,9 @@ Each skill is a self-contained, conversation-triggered workflow that automates c
 
 ## 📦 Skills
 
-| Skill | Description | Triggers | Notes |
-|-------|-------------|----------|-------|
-| [karpathy-curated-rss-brief](skills/karpathy-curated-rss-brief/) | Fetches articles from Karpathy's curated 93 RSS feeds and generates a Chinese daily newsletter | `RSS 日报`, `karpathy-curated-rss-brief` | Inspired by [Karpathy's RSS list](https://x.com/karpathy/status/2018043254986703167) & [Cory Doctorow on RSS](https://pluralistic.net/2026/03/07/reader-mode/). Skill page on [YouMind](https://youmind.com/~skills/019c4fce-220b-7f35-974b-0cc543b7682d). See [full inspiration →](skills/karpathy-curated-rss-brief/README.md#inspiration) |
+| Skill | Description | Triggers | Notes | Preview |
+|-------|-------------|----------|-------|-------|
+| [karpathy-curated-rss-brief](skills/karpathy-curated-rss-brief/) | Fetches articles from Karpathy's curated 93 RSS feeds and generates a Chinese daily newsletter | `RSS 日报`, `karpathy-curated-rss-brief` | Inspired by [Karpathy's RSS list](https://x.com/karpathy/status/2018043254986703167) & [Cory Doctorow on RSS](https://pluralistic.net/2026/03/07/reader-mode/). Skill page on [YouMind](https://youmind.com/~skills/019c4fce-220b-7f35-974b-0cc543b7682d). See [full inspiration →](skills/karpathy-curated-rss-brief/README.md#inspiration) | <img src="assets/KarpathyRssBeginning.png" width="480" alt="Newsletter beginning"> <img src="assets/KarpathyRssEnding.png" width="480" alt="Newsletter ending"> | 
 
 ---
 
