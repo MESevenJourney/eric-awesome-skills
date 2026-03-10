@@ -93,7 +93,7 @@ clawhub install karpathy-curated-rss-brief
 
 **通过 skills.sh：**
 ```bash
-npx skills@latest install karpathy-curated-rss-brief
+npx skills add https://github.com/MESevenJourney/eric-awesome-skills.git --skill karpathy-curated-rss-brief
 ```
 
 **通过 Claude Code 插件市场：**
